@@ -22,9 +22,9 @@ cp -r frontend/dist/. "artifacts/${VARIANT}/frontend/"
 [ -d frontend/coverage ] && cp -r frontend/coverage/. "artifacts/${VARIANT}/coverage/frontend/"
 
 echo "== Backend build (${VARIANT}) =="
-dotnet restore WestCoastFitness.sln
-dotnet build WestCoastFitness.sln --configuration Release
-dotnet test WestCoastFitness.sln --configuration Release \
+dotnet restore backend/WestCoastFitness.sln
+dotnet build backend/WestCoastFitness.sln --configuration Release
+dotnet test backend/WestCoastFitness.sln --configuration Release \
   --results-directory "artifacts/${VARIANT}/tests" \
   --settings backend/tests/WestCoastFitness.Api.Tests/coverlet.runsettings
 

@@ -29,11 +29,11 @@ if (Test-Path frontend/coverage) {
 }
 
 Write-Host "== Backend build ($Variant) =="
-dotnet restore WestCoastFitness.sln
+dotnet restore backend/WestCoastFitness.sln
 if ($LASTEXITCODE -ne 0) { throw "dotnet restore failed" }
-dotnet build WestCoastFitness.sln --configuration Release
+dotnet build backend/WestCoastFitness.sln --configuration Release
 if ($LASTEXITCODE -ne 0) { throw "dotnet build failed" }
-dotnet test WestCoastFitness.sln --configuration Release `
+dotnet test backend/WestCoastFitness.sln --configuration Release `
     --results-directory "artifacts/$Variant/tests" `
     --settings backend/tests/WestCoastFitness.Api.Tests/coverlet.runsettings
 if ($LASTEXITCODE -ne 0) { throw "dotnet test failed" }

@@ -7,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{3ACB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C1E7495F-29A7-49D3-B8CA-3B4521D3E028}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestCoastFitness.Api", "backend\src\WestCoastFitness.Api\WestCoastFitness.Api.csproj", "{C1A25340-5EE5-432A-9126-004013D73121}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestCoastFitness.Api", "src\WestCoastFitness.Api\WestCoastFitness.Api.csproj", "{C1A25340-5EE5-432A-9126-004013D73121}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0902D29E-C173-4E0C-9EED-F9EBC1CD1A1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestCoastFitness.Api.Tests", "backend\tests\WestCoastFitness.Api.Tests\WestCoastFitness.Api.Tests.csproj", "{E38A0C0D-1E6D-4710-82E6-1296A5CE885E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestCoastFitness.Api.Tests", "tests\WestCoastFitness.Api.Tests\WestCoastFitness.Api.Tests.csproj", "{E38A0C0D-1E6D-4710-82E6-1296A5CE885E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,7 +13,7 @@ function Invoke-LintMetric {
     npx oxlint --format json 1> "../$out/frontend-oxlint.json" 2> "../$out/frontend-oxlint.stderr.log"
     Pop-Location
 
-    dotnet build WestCoastFitness.sln --configuration Release *> "$out/backend-build-warnings.log"
+    dotnet build backend/WestCoastFitness.sln --configuration Release *> "$out/backend-build-warnings.log"
 }
 
 function Invoke-ScaMetric {
@@ -25,7 +25,7 @@ function Invoke-ScaMetric {
     npm audit --json 1> "../$out/frontend-npm-audit.json" 2> "../$out/frontend-npm-audit.stderr.log"
     Pop-Location
 
-    dotnet list WestCoastFitness.sln package --vulnerable --include-transitive *> "$out/backend-vulnerable-packages.txt"
+    dotnet list backend/WestCoastFitness.sln package --vulnerable --include-transitive *> "$out/backend-vulnerable-packages.txt"
 }
 
 function Invoke-SastMetric {

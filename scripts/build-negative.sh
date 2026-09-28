@@ -25,9 +25,9 @@ mkdir -p "artifacts/${VARIANT}/frontend"
 [ -d frontend/dist ] && cp -r frontend/dist/. "artifacts/${VARIANT}/frontend/"
 [ -d frontend/coverage ] && cp -r frontend/coverage/. "artifacts/${VARIANT}/coverage/frontend/"
 
-run_step "backend restore" dotnet restore WestCoastFitness.sln
-run_step "backend build" dotnet build WestCoastFitness.sln --configuration Release
-run_step "backend test" dotnet test WestCoastFitness.sln --configuration Release \
+run_step "backend restore" dotnet restore backend/WestCoastFitness.sln
+run_step "backend build" dotnet build backend/WestCoastFitness.sln --configuration Release
+run_step "backend test" dotnet test backend/WestCoastFitness.sln --configuration Release \
   --results-directory "artifacts/${VARIANT}/tests" \
   --settings backend/tests/WestCoastFitness.Api.Tests/coverlet.runsettings
 

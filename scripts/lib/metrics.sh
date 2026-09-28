@@ -13,7 +13,7 @@ metric_lint() {
   (cd frontend && npx oxlint --format json > "../${out}/frontend-oxlint.json" 2>"../${out}/frontend-oxlint.stderr.log")
   local frontend_status=$?
 
-  dotnet build WestCoastFitness.sln --configuration Release \
+  dotnet build backend/WestCoastFitness.sln --configuration Release \
     > "${out}/backend-build-warnings.log" 2>&1
   local backend_status=$?
 
@@ -29,7 +29,7 @@ metric_sca() {
 
   (cd frontend && npm audit --json > "../${out}/frontend-npm-audit.json" 2>"../${out}/frontend-npm-audit.stderr.log")
 
-  dotnet list WestCoastFitness.sln package --vulnerable --include-transitive \
+  dotnet list backend/WestCoastFitness.sln package --vulnerable --include-transitive \
     > "${out}/backend-vulnerable-packages.txt" 2>&1
 }
 

@@ -27,10 +27,10 @@ if (Test-Path frontend/coverage) {
     Copy-Item -Recurse -Force frontend/coverage/* "artifacts/$Variant/coverage/frontend/"
 }
 
-Invoke-Step -Name "backend restore" -Action { dotnet restore WestCoastFitness.sln } -Failures $Failures
-Invoke-Step -Name "backend build" -Action { dotnet build WestCoastFitness.sln --configuration Release } -Failures $Failures
+Invoke-Step -Name "backend restore" -Action { dotnet restore backend/WestCoastFitness.sln } -Failures $Failures
+Invoke-Step -Name "backend build" -Action { dotnet build backend/WestCoastFitness.sln --configuration Release } -Failures $Failures
 Invoke-Step -Name "backend test" -Action {
-    dotnet test WestCoastFitness.sln --configuration Release `
+    dotnet test backend/WestCoastFitness.sln --configuration Release `
         --results-directory "artifacts/$Variant/tests" `
         --settings backend/tests/WestCoastFitness.Api.Tests/coverlet.runsettings
 } -Failures $Failures
