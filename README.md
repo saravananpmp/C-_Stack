@@ -14,3 +14,5 @@ metric tooling and thresholds. They differ only in code/test/security/dependency
 
 Each branch builds independently into its own `artifacts/<branch>/` tree; see
 `scripts/build.ps1` / `scripts/build.sh` for the branch-aware build entry point.
+
+_Re-run trigger: 2026-09-29T15:14:17Z_
